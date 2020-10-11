@@ -1,0 +1,10 @@
+# python==3.6.12
+scikit-learn==0.20.3
+spacy==2.0.18
+revtok==0.0.3
+pytorch-pretrained-bert==0.6.2
+torch==1.2.0
+numpy==1.19.1
+# en-core-web-md==2.0.0
+# en-core-web-sm==2.0.0
+editdistance==0.5.3

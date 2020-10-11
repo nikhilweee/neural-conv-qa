@@ -16,7 +16,6 @@ import json
 import copy
 import random
 import argparse
-import numpy as np
 from collections import defaultdict
 
 random.seed(37)

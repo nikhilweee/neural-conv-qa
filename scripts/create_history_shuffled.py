@@ -1,17 +1,15 @@
 import copy
-from collections import defaultdict
-from hashlib import sha1
 import itertools
 import json
-import numpy as np
 import random
-from sklearn.model_selection import train_test_split
 import argparse
+from hashlib import sha1
+
 
 random.seed(102)
 
 
-def shuffle_history(utterances):
+def shuffle_history(utterances, overwrite_hash=False):
     """Shuffles history if present."""
     augmented_utterances = []
     for utterance in utterances:
@@ -21,6 +19,10 @@ def shuffle_history(utterances):
         for history in permutations[:1]:
             new_utterance = copy.deepcopy(utterance)
             new_utterance['history'] = list(history)
+            if overwrite_hash:
+                del new_utterance['utterance_id']
+                new_utterance['utterance_id'] = sha1(
+                    str(new_utterance).encode('utf-8')).hexdigest()
             augmented_utterances.append(new_utterance)
     return augmented_utterances
 
@@ -28,7 +30,7 @@ def shuffle_history(utterances):
 def clean_dataset(dataset):
     fixed_dataset = copy.deepcopy(dataset)
     # correct spelling errors
-    for idx, utterance in enumerate(fixed_dataset):
+    for utterance in fixed_dataset:
         for followup_qa in utterance['history'] + utterance['evidence']:
             if 'followup_question' in followup_qa:
                 followup_qa['follow_up_question'] = followup_qa.pop(
@@ -48,10 +50,10 @@ def main(args):
         dev_json = json.load(f)
 
     train_json = clean_dataset(train_json)
-    train_json = shuffle_history(train_json)
+    train_json = shuffle_history(train_json, args.overwrite_hash)
 
     dev_json = clean_dataset(dev_json)
-    dev_json = shuffle_history(dev_json)
+    dev_json = shuffle_history(dev_json, args.overwrite_hash)
 
     with open(args.train_out, 'w') as f:
         json.dump(train_json, f)
@@ -65,6 +67,7 @@ if __name__ == '__main__':
     parser.add_argument("--dev-in", default="data/sharc_dev.json", help="path to dev input file")
     parser.add_argument("--train-out", default="data/history_train.json", help="path to train output file")
     parser.add_argument("--dev-out", default="data/history_dev.json", help="path to dev output file")
+    parser.add_argument("--overwrite-hash", action='store_true', help="whether to recalculate SHA1 hashes")
     args = parser.parse_args()
 
     main(args)

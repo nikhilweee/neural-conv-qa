@@ -198,8 +198,8 @@ def main(args):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dev-in", default="data/history_dev.json", help="path to dev input file")
-    parser.add_argument("--dev-out", default="data/history_dev_multi.json", help="path to dev output file")
+    parser.add_argument("--dev-in", required=True, help="path to dev input file")
+    parser.add_argument("--dev-out", required=True, help="path to dev output file")
     args = parser.parse_args()
 
     main(args)
