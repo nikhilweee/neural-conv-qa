@@ -1,5 +1,5 @@
 # Neural Conversational QA
-This repository contains the script and data used for the EMNLP 2020 paper titled **Neural Conversational QA: Learning to Reason vs Exploiting Patterns**.
+This repository contains the script and data used for the EMNLP 2020 paper titled **Neural Conversational QA: Learning to Reason vs Exploiting Patterns** (https://arxiv.org/abs/1909.03759).
 
 
 ## Repository structure
@@ -41,10 +41,10 @@ $ bash run.sh
 If you find this repository useful, kindly use the following.
 
 ```
-@misc{sharma2019neural,
+@misc{verma2020neural,
       title={Neural Conversational QA: Learning to Reason v.s. Exploiting Patterns}, 
-      author={Abhishek Sharma and Danish Contractor and Harshit Kumar and Sachindra Joshi},
-      year={2019},
+      author={Nikhil Verma and Abhishek Sharma and Dhiraj Madan and Danish Contractor and Harshit Kumar and Sachindra Joshi},
+      year={2020},
       eprint={1909.03759},
       archivePrefix={arXiv},
       primaryClass={cs.CL}
