@@ -50,3 +50,6 @@ If you find this repository useful, kindly use the following.
       primaryClass={cs.CL}
 }
 ```
+
+## Acknowledgements
+Our heuristic model `scripts/heuristic.py` contains code derived from the [preprocessing script](https://github.com/vzhong/e3/blob/0c6b771b27463427db274802c4417355ddd90ed7/preprocess_sharc.py) in https://github.com/vzhong/e3. The evaluation script `scripts/evaluator_multi_pc.py` is derived from the [official evaluation script](https://worksheets.codalab.org/worksheets/0xcd87fe339fa2493aac9396a3a27bbae8/)
