@@ -1,3 +1,5 @@
+# Contains code from https://github.com/vzhong/e3/blob/0c6b771b27463427db274802c4417355ddd90ed7/preprocess_sharc.py
+
 import editdistance
 import os
 import json
