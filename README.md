@@ -1,5 +1,5 @@
 # Neural Conversational QA
-This repository contains the script and data used for the EMNLP 2020 paper titled **Neural Conversational QA: Learning to Reason vs Exploiting Patterns** (https://arxiv.org/abs/1909.03759).
+This repository contains the script and data used for the EMNLP 2020 paper titled **Neural Conversational QA: Learning to Reason vs Exploiting Patterns** [[ArXiV]](https://arxiv.org/abs/1909.03759) [[ACL]](https://www.aclweb.org/anthology/2020.emnlp-main.589/).
 
 
 ## Repository structure
@@ -41,13 +41,22 @@ $ bash run.sh
 If you find this repository useful, kindly use the following.
 
 ```
-@misc{verma2020neural,
-      title={Neural Conversational QA: Learning to Reason v.s. Exploiting Patterns}, 
-      author={Nikhil Verma and Abhishek Sharma and Dhiraj Madan and Danish Contractor and Harshit Kumar and Sachindra Joshi},
-      year={2020},
-      eprint={1909.03759},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{verma-etal-2020-neural,
+    title = "Neural Conversational {QA}: Learning to Reason vs Exploiting Patterns",
+    author = "Verma, Nikhil  and
+      Sharma, Abhishek  and
+      Madan, Dhiraj  and
+      Contractor, Danish  and
+      Kumar, Harshit  and
+      Joshi, Sachindra",
+    booktitle = "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
+    month = nov,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.emnlp-main.589",
+    pages = "7263--7269",
+    abstract = "Neural Conversational QA tasks such as ShARC require systems to answer questions based on the contents of a given passage. On studying recent state-of-the-art models on the ShARC QA task, we found indications that the model(s) learn spurious clues/patterns in the data-set. Further, a heuristic-based program, built to exploit these patterns, had comparative performance to that of the neural models. In this paper we share our findings about the four types of patterns in the ShARC corpus and how the neural models exploit them. Motivated by the above findings, we create and share a modified data-set that has fewer spurious patterns than the original data-set, consequently allowing models to learn better.",
 }
 ```
 
